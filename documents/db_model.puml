@@ -1,0 +1,32 @@
+@startuml DatabaseModel
+skin rose
+hide empty members
+
+entity User {
+  *id: int
+  *name: string
+  *lastname: string
+  *email: string
+  *password: string
+  *isActive: boolean
+  *created_at: datetime
+  *updated_at: datetime
+}
+
+entity Dishes{
+    *id: int
+    *name: string
+    *description: string
+    *image: string
+    *price: float
+    *category: enum
+    *ingredients: string
+    *aviable: boolean
+    *isActive: boolean
+    *created_at: datetime
+    *updated_at: datetime
+}
+
+User --> Dishes : "1..*"
+
+@enduml
