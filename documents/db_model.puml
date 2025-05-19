@@ -13,7 +13,7 @@ entity User {
   *updated_at: datetime
 }
 
-entity Dishes{
+entity Dish {
     *id: int
     *name: string
     *description: string
@@ -27,6 +27,18 @@ entity Dishes{
     *updated_at: datetime
 }
 
-User --> Dishes : "1..*"
+entity Order {
+  *id: int
+  *user_id: int
+  *dish_id: int
+  *quantity: int
+  *total_price: float
+  *status: enum
+  *created_at: datetime
+  *updated_at: datetime
+}
+
+User --> Order : "1..*" "Places"
+Order --> Dish : "1..*" "Contains"
 
 @enduml
