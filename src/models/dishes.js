@@ -64,6 +64,9 @@ Dish.init(
     }
 );
 
+// Relationships
+Dish.Order = Dish.belongsTo(require('./orders'), { foreignKey: 'orderId' });
+
 Dish.prototype.toJSON = function () {
     const { ...dish } = this.get();
     return dish;

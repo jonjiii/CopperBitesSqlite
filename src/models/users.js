@@ -44,6 +44,9 @@ User.init(
     }
 );
 
+// Relationships
+User.Order = User.hasMany(require('./orders'));
+
 User.prototype.toJSON = function () {
     const {password, ...user} = this.get();
     delete user.password;

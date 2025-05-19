@@ -4,6 +4,7 @@ const cors = require("cors");
 const db = require("./config/database");
 const User = require("./models/users");
 const Dish = require("./models/dishes");
+const Order = require("./models/orders");
 
 class Server {
     constructor() {
@@ -15,6 +16,7 @@ class Server {
         this.paths = {
             users: "/api/users",
             dishes: "/api/dishes",
+            orders: "/api/orders"
         };
 
         // Database connection
@@ -42,6 +44,7 @@ class Server {
         // Add models to the database
         await User.sync({force: false});
         await Dish.sync({force: false});
+        await Order.sync({force: false});
 
     }
     
@@ -59,6 +62,7 @@ class Server {
     routes() {
         this.app.use(this.paths.users, require("./routes/userRoutes"));
         this.app.use(this.paths.dishes, require("./routes/dishRoutes"));
+        this.app.use(this.paths.orders, require("./routes/orderRoutes"));
     }
     
     listen() {
