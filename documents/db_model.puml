@@ -38,7 +38,18 @@ entity Order {
   *updated_at: datetime
 }
 
+entity Dish_Order {
+  *id: int
+  *dish_id: int
+  *order_id: int
+  *quantity: int
+  *total_price: float
+  *created_at: datetime
+  *updated_at: datetime
+}
+
 User --> Order : "1..*" "Places"
-Order --> Dish : "1..*" "Contains"
+Order --> Dish_Order : "1..*" "Contains"
+Dish --> Dish_Order : "1..*" "Includes"
 
 @enduml
