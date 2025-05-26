@@ -52,7 +52,7 @@ module.exports = {
       },
       orderId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: 'orders',
           key: 'id'
