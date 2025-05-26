@@ -35,6 +35,11 @@ Comandos a realizar:
     sequelize init 
 ```
 
+* Correr el comando para crear las migraciones:
+```
+    npx sequelize-cli migration:generate --name <nombre creacion de tabla ej: create-user>
+```
+
 * Para correr el proyecto
 
 ```
