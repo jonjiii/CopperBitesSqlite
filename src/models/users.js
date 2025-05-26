@@ -44,8 +44,9 @@ User.init(
     }
 );
 
-// Relationships
-User.Order = User.hasMany(require('./orders'));
+User.associate = (models) => {
+    User.hasMany(models.Order, { foreignKey: 'userId' });
+}
 
 User.prototype.toJSON = function () {
     const {password, ...user} = this.get();

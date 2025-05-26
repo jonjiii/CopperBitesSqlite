@@ -32,9 +32,10 @@ Order.init(
     }
 );
 
-// Relationships
-Order.User = Order.belongsTo(require('./users'), { foreignKey: 'userId' });
-Order.Dish = Order.hasMany(require('./dishes'));
+Order.associate = (models) => {
+    Order.belongsTo(models.User, { foreignKey: 'userId' });
+    Order.hasMany(models.Dish, { foreignKey: 'orderId' });
+}
 
 Order.prototype.toJSON = function () {
     const { ...order } = this.get();
