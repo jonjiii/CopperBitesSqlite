@@ -3,7 +3,7 @@
 ![unit: Departamento de Ingeniería de Sistemas y Computación](https://img.shields.io/badge/course-Departamento%20de%20Ingenier%C3%ADa%20de%20Sistemas%20y%20Computaci%C3%B3n-blue?logo=coursera)
 ![institution: Universidad Católica del Norte](https://img.shields.io/badge/institution-Universidad%20Cat%C3%B3lica%20del%20Norte-blue?logo=google-scholar)
 
-## Description
+## Descripción
 
 Proyecto en clases para mostrar el menu y realizar pedidos en un Restaurant.
 
