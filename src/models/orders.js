@@ -34,7 +34,7 @@ Order.init(
 
 Order.associate = (models) => {
     Order.belongsTo(models.User, { foreignKey: 'userId' });
-    Order.hasMany(models.Dish, { foreignKey: 'orderId' });
+    Order.hasMany(models.DishOrder, { foreignKey: 'orderId' });
 }
 
 Order.prototype.toJSON = function () {

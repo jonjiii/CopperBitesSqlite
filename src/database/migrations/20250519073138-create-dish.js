@@ -50,16 +50,6 @@ module.exports = {
         defaultValue: true,
         allowNull: false
       },
-      orderId: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        references: {
-          model: 'orders',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
-      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false

@@ -54,17 +54,7 @@ Dish.init(
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false,
-    },
-    orderId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: "orders",
-        key: "id",
-      },
-      onUpdate: "CASCADE",
-      onDelete: "SET NULL",
-    },
+    }
   },
   {
     sequelize: db,
@@ -75,7 +65,7 @@ Dish.init(
 );
 
 Dish.associate = (models) => {
-  Dish.belongsTo(models.Order, { foreignKey: "orderId" });
+  Dish.hasMany(models.DishOrder, { foreignKey: "dishId" });
 };
 
 Dish.prototype.toJSON = function () {

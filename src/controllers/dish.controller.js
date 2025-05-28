@@ -4,6 +4,15 @@ const Dish = require('../models/dishes');
 const getDishes = async (req = request, res = response) => {
     try {
         const dishes = await Dish.findAll();
+
+        if (!dishes || dishes.length === 0) {
+            return res.status(404).json({
+                success: false,
+                error: true,
+                message: 'No dishes found',
+            });
+        }
+
         res.status(200).json({
             success: true,
             error: false,

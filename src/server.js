@@ -5,6 +5,7 @@ const db = require("./config/database");
 const User = require("./models/users");
 const Dish = require("./models/dishes");
 const Order = require("./models/orders");
+const DishOrder = require("./models/dishOrder");
 
 class Server {
     constructor() {
@@ -45,7 +46,8 @@ class Server {
         await User.sync({force: false});
         await Dish.sync({force: false});
         await Order.sync({force: false});
-
+        await DishOrder.sync({force: false});
+        console.log("Models synchronized with the database");
     }
     
     middlewares() {
