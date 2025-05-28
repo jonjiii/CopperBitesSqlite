@@ -11,20 +11,23 @@ const {
     cancelOrder
 } = require('../controllers/order.controller');
 
+// middlewares
+const validateToken = require('../middlewares/validateToken');
+
 // get all orders
-router.get('/', getOrders);
+router.get('/', validateToken,  getOrders);
 
 // get order by id
-router.get('/:id', getOrderById);
+router.get('/:id', validateToken, getOrderById);
 
 // create a new order
-router.post('/', createOrder);
+router.post('/', validateToken, createOrder);
 
 // update an existing order
-router.put('/:id', updateOrder);
+router.put('/:id', validateToken, updateOrder);
 
 // delete an order
-router.delete('/:id', cancelOrder);
+router.delete('/:id', validateToken, cancelOrder);
 
 
 module.exports = router;

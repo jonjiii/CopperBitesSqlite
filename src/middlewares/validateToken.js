@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/users');
 
 const validateToken = async (req, res = response, next) => {
-    const authHeader = req.header['authorization'];
+    const authHeader = req.header('Authorization');
     token = authHeader && authHeader.split(' ')[1];
     // If the token is not provided in the Authorization header
     if (!token) {
@@ -22,7 +22,7 @@ const validateToken = async (req, res = response, next) => {
             return res.status(401).json({
                 success: false,
                 error: true,
-                message: 'Invalid token - user does not exist or is inactive'
+                message: 'Token is invalid - user not authorized'
             });
         }
 
