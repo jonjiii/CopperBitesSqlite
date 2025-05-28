@@ -5,7 +5,6 @@ const router = Router();
 // Controllers
 const { register, login } = require('../controllers/user.controller');
 
-
 // Register route
 router.post('/register', register);
 

@@ -42,7 +42,7 @@ const register = async (req = request, res = response) => {
         await user.save();
 
         // Generate a token for the new user
-        const token = generateToken(user.id);
+        const token = await generateToken(user.id);
 
         const userData = {
             id: user.id,
@@ -93,7 +93,7 @@ const login = async (req = request, res = response) => {
         }
 
         // Generate a token for the user
-        const token = generateToken(user.id);
+        const token = await generateToken(user.id);
 
         const userData = {
             id: user.id,

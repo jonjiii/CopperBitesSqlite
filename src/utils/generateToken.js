@@ -10,6 +10,8 @@ const generateToken = (id = '') => {
                     console.log(error);
                     reject('Token generation failed');
                 } else {
+                    // Successfully generated token
+                    console.log('Token generated successfully');
                     resolve(token);
                 }
             });

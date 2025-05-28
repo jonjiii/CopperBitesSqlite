@@ -1,8 +1,8 @@
-const { respone } = require('express');
+const { response } = require('express');
 const jwt = require('jsonwebtoken');
 const User = require('../models/users');
 
-const validateToken = async (req, res = respone, next) => {
+const validateToken = async (req, res = response, next) => {
     const authHeader = req.header['authorization'];
     token = authHeader && authHeader.split(' ')[1];
     // If the token is not provided in the Authorization header
