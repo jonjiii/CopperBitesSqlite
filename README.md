@@ -18,7 +18,7 @@ Proyecto en clases para mostrar el menu y realizar pedidos en un Restaurant.
 * Dependencias a instalar:
 
 ```
-    npm intall express express-validator cors sequelize sequelize-cli sqlite3 bcryptjs jsonwebtoken
+    npm install express express-validator cors sequelize sequelize-cli sqlite3 bcryptjs jsonwebtoken
 ```
 
 * Dependencia de desarrollo:
@@ -34,7 +34,7 @@ Proyecto en clases para mostrar el menu y realizar pedidos en un Restaurant.
 * Correr el comando para crear config, models, migrations and seeders a modo de ORM.
 
 ```
-    sequelize init 
+    npx sequelize init 
 ```
 
 * Correr el comando para crear las migraciones:
